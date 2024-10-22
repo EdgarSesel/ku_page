@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    
+    {# Bootstrap CSS #}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    
+    {# Custom CSS file (if you need it) #}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <div class="logo">
+            <img src="{{ asset('images/Vector.png') }}" alt="Logo">
+        </div>
+        <div class="menu-icon">
+            <span>☰</span>
+        </div>
+        <div class="language">
+            <span style="font-weight: 500; font-family: 'Space Grotesk', sans-serif;">LT</span>
+        </div>
+    </div>
+
+    <div class="header-container">
+        <div class="header-text">
+            <h1>Bakalauro studijos</h1>
+            <p>Visame pasaulyje pripažįstami <br>laipsniai ir diplomai</p>
+        </div>
+        <a href="#" class="back-button">
+            <img src="{{ asset('images/arrow-back.png') }}" alt="Arrow" class="arrow-icon">
+            Grįžti
+        </a>
+    </div>
+
+    <main class="container">
+        {# Block for including page-specific content #}
+        {% block content %}{% endblock %}
+    </main>
+
+    <hr class="footer-break-line"> <!-- Break line above footer -->
+
+    <footer class="footer bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <p style="font-size: 1.25em; font-weight: 550;">Apie</p>
+                    <ul>
+                        <li>Struktūra ir valdymas</li>
+                        <li>Naujienos</li>
+                        <li>Karjera</li>
+                        <li>Universiteto stilius</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <p style="font-size: 1.25em; font-weight: 550;">Bendruomene</p>
+                    <ul>
+                        <li>KU partneriai ir rėmėjai</li>
+                        <li>Psichologinis konsultavimas</li>
+                        <li>Komandos įvairovė</li>
+                        <li>Laivynas</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <p style="font-size: 1.25em; font-weight: 550;">Pagalba</p>
+                    <ul>
+                        <li>Informacija studentams</li>
+                        <li>Pagalbos centras DUK</li>
+                        <li>Pasitikėjimas ir saugumas</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <p style="font-size: 1.25em; font-weight: 550;">Kontaktai</p>
+                    <ul>
+                        <li>Bendra info</li>
+                        <li>Būsimiems studentams</li>
+                        <li>Žiniasklaidai</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-5 text-left"> <!-- Ensure the row is left-aligned -->
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <div class="footer-icon-container">
+                        <img src="{{ asset('images/Facebook.png') }}" alt="Facebook Icon" class="footer-icon">
+                        <img src="{{ asset('images/Instagram.png') }}" alt="Icon 2" class="footer-icon">
+                        <img src="{{ asset('images/LinkedIn.png') }}" alt="Icon 3" class="footer-icon">
+                        <img src="{{ asset('images/YouTube.png') }}" alt="Icon 4" class="footer-icon">
+                    </div>
+                </div>
+                <div class="col-md-3"></div> <!-- Empty column -->
+                <div class="col-md-2 d-flex justify-content-between align-items-start mb-3 mb-md-0">
+                    <p>Svetainės schema</p>
+                </div>
+                <div class="col-md-2 d-flex justify-content-between align-items-start mb-3 mb-md-0">
+                    <p>Privatumo politika</p>
+                </div>
+                <div class="col-md-2 d-flex justify-content-between align-items-start mb-3 mb-md-0">
+                    <p>Eduroam</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {# Bootstrap JS and dependencies #}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adjust sidebar position based on screen size
+            function adjustSidebar() {
+                var sidebar = document.getElementById('sidebar');
+                if (window.innerWidth <= 768) {
+                    sidebar.style.width = '100%';
+                    sidebar.style.height = '60px'; /* Set a fixed height for the sidebar */
+                    sidebar.style.flexDirection = 'row';
+                    sidebar.style.justifyContent = 'space-around';
+                    sidebar.style.borderRight = 'none';
+                    sidebar.style.borderBottom = '1px solid #ddd';
+                } else {
+                    sidebar.style.width = '80px';
+                    sidebar.style.height = '100%';
+                    sidebar.style.flexDirection = 'column';
+                    sidebar.style.justifyContent = 'flex-start';
+                    sidebar.style.borderRight = '1px solid #ddd';
+                    sidebar.style.borderBottom = 'none';
+                }
+            }
+
+            // Initial adjustment
+            adjustSidebar();
+
+            // Adjust on window resize
+            window.addEventListener('resize', adjustSidebar);
+        });
+    </script>
+</body>
+</html>

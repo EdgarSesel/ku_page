@@ -1,0 +1,532 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rando+Display:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap');
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 80px; /* Default width for larger screens */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+    padding: 20px 0;
+    border-right: 1px solid #ddd;
+    z-index: 1000; /* Ensure sidebar is above other content */
+}
+
+.logo {
+    margin-bottom: 20px; /* Add some space below the logo */
+}
+
+.menu-icon {
+    font-size: 2em; /* Make the menu icon bigger */
+    margin-bottom: 20px; /* Add some space below the menu icon */
+}
+
+.language {
+    margin-top: auto; /* Push the language selector to the bottom */
+    display: flex;
+    align-items: center;
+    font-family: 'Space Grotesk', sans-serif; /* Set font to Space Grotesk */
+}
+
+.language span::after {
+    content: url('/images/arrow.png'); /* Use an arrow image */
+    margin-left: 5px;
+    width: 16px; /* Adjust the size of the arrow */
+    height: 16px; /* Adjust the size of the arrow */
+}
+
+/* Header */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header-container {
+    position: relative;
+    width: calc(100% - 80px); /* Adjust width to match the new sidebar width */
+    margin-left: 80px; /* Adjust margin to match the new sidebar width */
+    min-height: 100vh; /* Ensure the height is at least 100% of the viewport height */
+    background: url('/images/Rect.png') no-repeat center top; /* Adjusted background position */
+    background-size: cover; /* Ensure the background image covers the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px; /* Add gap between picture and bottom */
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Make text white */
+    text-align: center; /* Center-align the text */
+    width: 90%; /* Ensure text is centered and responsive */
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        width: 100%; /* Full width on mobile */
+        margin-left: 0; /* No sidebar offset */
+        margin-top: 60px; /* Offset for sidebar height */
+        background-size: contain; /* Ensure the background image scales properly */
+    }
+
+    .header-text {
+        width: 90%; /* Ensure text is centered and responsive */
+        font-size: 1.2em; /* Scale text smaller for mobile */
+        top: 30%; /* Position text higher on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        width: 100%; /* Full width on mobile */
+        margin-left: 0; /* No sidebar offset */
+        margin-top: 60px; /* Offset for sidebar height */
+        background-size: cover; /* Ensure the background image covers the container */
+        min-height: 50vh; /* Adjust the minimum height to ensure the image is visible */
+    }
+
+    .header-text {
+        width: 90%; /* Ensure text is centered and responsive */
+        font-size: 1em; /* Scale text smaller for smaller mobile devices */
+        top: 30%; /* Position text higher on smaller mobile devices */
+    }
+}
+
+.header-container + .container {
+    margin-top: 5em; /* Reduce gap between header and content */
+}
+
+
+
+.header-text h1 {
+    font-family: 'Rando Display', sans-serif; /* Set font to Rando Display */
+}
+
+.header-text p {
+    font-family: 'Space Grotesk', sans-serif; /* Set font to Space Grotesk */
+}
+
+.back-button {
+    position: absolute;
+    top: 5%; /* Position 5% from the top */
+    left: 10%; /* Position 10% from the left */
+    background-color: white;
+    color: black;
+    font-family: 'Space Grotesk', sans-serif; /* Set font to Space Grotesk */
+    padding: 8px 30px;
+    border-radius: 30px; /* Rounded corners */
+    text-decoration: none;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .back-button {
+        top: 10px; /* Move closer to the top corner */
+        left: 10px; /* Adjust position for smaller screens */
+        padding: 3px 10px; /* Adjust padding for smaller screens */
+    }
+    .header-container + .container {
+        margin-top: 1px; /* Reduce gap between header and content */
+    }
+
+}
+
+@media (max-width: 480px) {
+    .back-button {
+        top: 10px; /* Move closer to the top corner */
+        left: 10px; /* Adjust position for smaller screens */
+        padding: 3px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .header-container + .container {
+        margin-top: 1px; /* Reduce gap between header and content */
+    }
+}
+
+
+
+.arrow-icon {
+    margin-right: 15px;
+    margin-left: -10px; /* Space between arrow and text */
+}
+
+/* Main content */
+.container p {
+    font-family: 'Space Grotesk', sans-serif; /* Set font to Space Grotesk */
+}
+
+.container h2 {
+    font-family: 'Rando Display', sans-serif; /* Set font to Rando Display */
+}
+
+.container .specialization-text {
+    font-weight: 500; /* Set font weight to 500 */
+}
+
+/* Footer */
+.footer ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-family: 'Space Grotesk', sans-serif; /* Set font to Space Grotesk */
+}
+
+.footer-icon {
+    max-width: 20px;
+    margin: 0 5px;
+}
+
+.footer-icons {
+    margin-top: 50px;
+}
+
+.footer .col-md-6 a {
+    text-align: left;
+    margin-right: 15px;
+}
+
+.footer-break-line {
+    width:80%; /* Adjust the width as needed */
+    margin: 2em auto; /* Center the line and add vertical spacing */
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-links p {
+    margin: 0 15px; /* Adjust the margin as needed */
+}
+
+.footer-icon-container {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .footer .row {
+        text-align: left; /* Ensure footer sections are left-aligned on mobile */
+    }
+
+    .footer-icon-container {
+        justify-content: center;
+        margin-bottom: 20px; /* Add some space below the icons */
+    }
+
+    .footer .col-md-2 {
+        margin-bottom: 20px; /* Add some space below the text columns */
+    }
+
+    .footer .col-md-2,
+    .footer .col-md-3 {
+        text-align: left; /* Ensure footer sections are left-aligned on mobile */
+    }
+
+    .footer .col-md-2 p,
+    .footer .col-md-3 p {
+        margin-top: 10px; /* Add gap between icons and text */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer .row {
+        text-align: left; /* Ensure footer sections are left-aligned on mobile */
+    }
+
+    .footer-icon-container {
+        justify-content: center;
+        margin-bottom: 20px; /* Add some space below the icons */
+    }
+
+    .footer .col-md-2 {
+        margin-bottom: 20px; /* Add some space below the text columns */
+    }
+
+    .footer .col-md-2,
+    .footer .col-md-3 {
+        text-align: left; /* Ensure footer sections are left-aligned on mobile */
+    }
+
+    .footer .col-md-2 p,
+    .footer .col-md-3 p {
+        margin-top: 10px; /* Add gap between icons and text */
+    }
+}
+
+/* Add gap between end of container and end of page */
+.container {
+    padding-bottom: 50px; /* Adjust the padding as needed */
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-top: 0; /* Remove top padding */
+        margin-top: 0; /* Remove top margin */
+    }
+
+    .container > .row {
+        margin-top: 0;
+        padding-top: 0; /* Remove top margin from row */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-top: 0; /* Remove top padding */
+        margin-top: 0; /* Remove top margin */
+    }
+
+    .container > .row {
+        margin-top: 0;
+        padding-top: 0; /* Remove top margin from row */
+    }
+}
+
+/* Carousel styles */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.logos {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+}
+
+.logos:before,
+.logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.logos:hover .logos-slide {
+    animation-play-state: paused;
+}
+
+.logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+}
+
+.carousel-image-container {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top; /* Ensure vertical alignment */
+}
+
+.carousel-image-container img {
+    height: 50px;
+    margin: 0 40px;
+}
+
+.carousel-text {
+    font-family: 'Space Grotesk', sans-serif; /* Use your desired font */
+    color: black; /* Remove background color */
+    padding: 10px;
+    margin-top: 10px; /* Space between image and text */
+    text-align: center;
+    height: 60px; /* Set a fixed height to ensure alignment */
+    line-height: 1.2; /* Adjust line height for better readability */
+}
+
+/* Newsletter styles */
+.newsletter-container {
+    margin: 4em 0; /* Add margin to separate from other sections */
+}
+
+.newsletter-container h1 {
+    font-size: 3em;
+    font-weight: 700;
+    font-family: 'Rando Display', sans-serif;
+    margin-bottom: 1em;
+}
+
+.newsletter-container p {
+    font-size: 1.2em;
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 1.5em;
+}
+
+.newsletter-input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px; /* Increase max-width to make it wider */
+}
+
+.newsletter-input {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #333;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 30px;
+    text-align: left; /* Align text to the left */
+    outline: none;
+}
+
+.newsletter-input::placeholder {
+    color: #888;
+}
+
+.newsletter-submit-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%; /* Sidebar takes full width on mobile */
+        height: 60px; /* Set a fixed height for the sidebar */
+        flex-direction: row; /* Switch to row direction for mobile */
+        justify-content: center; /* Center align the content */
+        align-items: center; /* Center align the content */
+        padding: 10px 0;
+        border-right: none;
+        border-bottom: 1px solid #ddd; /* Border at bottom on mobile */
+        z-index: 1000;
+    }
+
+    .sidebar > * {
+        margin: 0 10px; /* Add horizontal spacing between elements */
+    }
+
+
+    .carousel-image-container img {
+        height: 40px;
+        margin: 0 20px;
+    }
+
+    .carousel-text {
+        font-size: 0.9em;
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    .newsletter-container h1 {
+        font-size: 2em;
+    }
+
+    .newsletter-container p {
+        font-size: 1em;
+    }
+
+    .newsletter-input {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+
+    .footer .row {
+        text-align: center;
+    }
+
+    .footer-icon-container {
+        justify-content: center;
+        margin-bottom: 20px; /* Add some space below the icons */
+    }
+
+    .footer .col-md-2 {
+        margin-bottom: 20px; /* Add some space below the text columns */
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px; /* Set a fixed height for the sidebar */
+        flex-direction: row;
+        justify-content: center; /* Center align the content */
+        align-items: center; /* Center align the content */
+        padding: 10px 0;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        z-index: 1000;
+    }
+
+    .sidebar > * {
+        margin: 0 10px; /* Add horizontal spacing between elements */
+    }
+
+    .carousel-image-container img {
+        height: 30px;
+        margin: 0 10px;
+    }
+
+    .carousel-text {
+        font-size: 0.7em;
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    .newsletter-container h1 {
+        font-size: 1.5em;
+    }
+
+    .newsletter-container p {
+        font-size: 0.9em;
+    }
+
+    .newsletter-input {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+
+    .footer .row {
+        text-align: center;
+    }
+
+    .footer-icon-container {
+        justify-content: center;
+        margin-bottom: 20px; /* Add some space below the icons */
+    }
+
+    .footer .col-md-2 {
+        margin-bottom: 20px; /* Add some space below the text columns */
+    }
+}

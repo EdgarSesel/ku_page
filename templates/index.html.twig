@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p style="font-size: 2em; font-weight: 500; font-family: 'Rando Display', sans-serif;">Specializacijos</p>
+            </div>
+            <div class="col-md-6 specialization-text">
+                <p>
+                    siūlome 30 specializacijos kursų šiose srityse: <br>
+                    <span style="font-weight: 550;">· Pakrančių plėtra ir tvarus jūrų turizmas</span> <br>
+                    <span style="font-weight: 550;">· Mėlynoji ekonomika ir tvarus augimas</span> <br><br>
+                    Kiekvieno kurso apimtis 6 ECTS. Sėkmingai baigusieji penkis
+                    kursus gaus tarptautinį specializacijos sertifikatą (30 ECTS).
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <hr style="margin: 2em 0 4em;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6"> 
+                <p style="font-size: 2em; font-weight: 500; font-family: 'Times New Roman', Times, serif;">Mikrokredencialai</p>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    Siūlome trumpas mokymosi patirtis su galimybėmis įgyti<br>
+                    papildomų žinių apie išmanių pakrančių miestų tvarią plėtrą.
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr style="margin: 2em 0 4em 0;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6"> 
+                <p style="font-size: 2em; font-weight: 500; font-family: 'Times New Roman', Times, serif;">Iššūkių projektai</p>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    Asocijuoti Aljanso partneriai (miestų ir uostų administracijos,<br>
+                    verslo įmonės) siūlo iššūkių projektus, skirtus studijų krypties<br>
+                    arba papildomai patirčiai įgyti.
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr style="margin: 2em 0;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <section class="carousel-section my-5">
+                    <h2 style="margin-bottom: 3em;">EU-CONEXUS alijanso teikiamos naudos</h2> <!-- Increased gap below heading -->
+                    <div class="logos">
+                        <div class="logos-slide">
+                            {% set texts = [
+                                'Tarptautiniai darbo pasiūlymai ir stažuotės',
+                                'Grantai, stipendijos ir studentų projektų finansavimas',
+                                'Inovacijų konkursai',
+                                '„Atviros laboratorijos valandos“',
+                                'Patyrusių pramonės ekspertų paskaitos',
+                                'Studijavimas bent trijose Aljanso šalyse',
+                                'Novatoriški moksliniai mėlynosios biotechnologijos tyrimai'
+                            ] %}
+                            {% for i in 0..6 %}
+                                <div class="carousel-image-container">
+                                    <img src="{{ asset('images/cn' ~ (i + 1) ~ '.png') }}" alt="Slide {{ i + 1 }}">
+                                    <p class="carousel-text">{{ texts[i] }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var copy = document.querySelector(".logos-slide").cloneNode(true);
+            document.querySelector(".logos").appendChild(copy);
+
+            // Add line breaks after every 3 words
+            document.querySelectorAll('.carousel-text').forEach(function(element) {
+                var words = element.innerHTML.split(' ');
+                for (var i = 3; i < words.length; i += 4) {
+                    words[i] = '<br>' + words[i];
+                }
+                element.innerHTML = words.join(' ');
+            });
+        });
+    </script>
+    <div class="container newsletter-container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Naujienlaiškis</h1>
+                <p>Nepraleisk KU svarbiausių naujienų,<br>įvykių ir renginių.</p>
+                <div class="newsletter-input-container">
+                    <input type="text" class="newsletter-input" placeholder="Įvesti el-paštą">
+                    <img src="{{ asset('images/arrow-submit.png') }}" alt="Submit" class="newsletter-submit-icon">
+                </div>
+            </div>
+        </div>
+        </div>
+{% endblock %}
